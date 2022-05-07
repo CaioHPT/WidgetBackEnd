@@ -4,9 +4,7 @@ import cors from 'cors'
 
 const app = express()
 
-app.use(cors({
-    origin: "https://widget-theta.vercel.app"
-}))
+app.use(cors())
 
 app.use(express.json())
 app.use(routes)
