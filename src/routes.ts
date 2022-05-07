@@ -6,10 +6,9 @@ import { SubmitFeedbackService } from './services/SubmitFeedbackService';
 export const routes = express.Router()
 
 routes.post('/feedbacks', async (req, res) => {
+    const { type, comment, screenshot } = req.body
+
     try {
-        const { type, comment, screenshot } = req.body
-
-
         const prismaFeedbacksRepository = new PrismaFeedbacksRepository()
         const nodeMailerAdapter = new NodeMailerAdapter()
 
